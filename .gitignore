@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Model and generated runtime artifacts
+models/
+mlruns/
+mlartifacts/
+artifacts/
+reports/
+*.db
+*.sqlite
+*.sqlite3
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build and temporary output
+build/
+dist/
+tmp/
+*.log
+*.zip
+
+# Reference documentation archive copy
+LLMOps-project-docs/
