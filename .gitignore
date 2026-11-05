@@ -18,6 +18,7 @@ ENV/
 *.key
 
 # Model and generated runtime artifacts
+data/*.jsonl
 models/
 mlruns/
 mlartifacts/

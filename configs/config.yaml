@@ -1,5 +1,18 @@
-# Foundation configuration placeholder.
-# Configuration loading is implemented in Sprint 1; environment variables are
-# currently the authoritative foundation settings.
 version: 1
-environment: local
+
+app:
+  name: LLMOps
+  environment: local
+  host: 127.0.0.1
+  port: 8000
+  log_level: INFO
+
+data:
+  output_dir: data
+  sample_count: 100
+  seed: 42
+  validation_fraction: 0.2
+
+prompts:
+  directory: prompts
+  default_version: v1

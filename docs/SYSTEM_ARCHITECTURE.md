@@ -57,7 +57,7 @@ docker-compose.yml
 
 ### Configuration contract
 
-`src/utils/config.py` loads `configs/config.yaml`, allows an explicit configuration path, and permits runtime overrides through environment variables. All filesystem paths are resolved relative to the project root or explicitly configured absolute paths.
+`src/llmops/config.py` loads `configs/config.yaml` and permits runtime overrides through `LLMOPS_` environment variables. Environment values override YAML values. Relative data and prompt directories resolve from the project root; explicitly configured absolute paths are preserved.
 
 ### Dataset contract
 
@@ -73,7 +73,11 @@ Dataset rows use the following logical fields:
 }
 ```
 
-The contract is JSONL-based and is shared by training, evaluation and traffic simulation.
+The contract is JSONL-based and is shared by training, evaluation and traffic simulation. `src/llmops/data/dataset.py` generates rows deterministically from a seed, reads and writes JSONL, and splits rows into disjoint train and validation sets.
+
+### Prompt contract
+
+Versioned system prompts live in `prompts/v<number>.txt`. `src/llmops/utils/prompts.py` discovers and loads prompt versions and builds system/user chat-message pairs. A missing or invalid requested version raises a clear error rather than silently selecting a different prompt.
 
 ### Backend contract
 

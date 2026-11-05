@@ -24,6 +24,7 @@ dev = [
 
 [project.scripts]
 llmops-api = "llmops.main:main"
+llmops-generate-data = "llmops.data.dataset:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
